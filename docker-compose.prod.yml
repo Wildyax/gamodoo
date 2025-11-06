@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./back
+      dockerfile: Dockerfile.prod
+    container_name: symfony-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./back:/var/www/html
+      - cache:/var/www/html/var/cache
+      - vendor:/var/www/html/vendor
+    environment:
+      DATABASE_URL: "sqlite:///var/www/html/var/app.db"
+
+  frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile.prod
+    container_name: react-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  cache:
+  vendor:
