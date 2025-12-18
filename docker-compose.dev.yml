@@ -12,7 +12,6 @@ services:
       - ./back:/var/www/html
     environment:
       - APP_ENV=dev
-      - DATABASE_URL=sqlite:///var/www/html/var/app.db
     networks:
       - devnet
 
