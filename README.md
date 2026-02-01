@@ -16,14 +16,46 @@ git submodule update --init --recursive
 
 ## Docker
 
-Pour lancer le back en dev, ouvrir un terminal et faire la commande :
+Plusieurs changements ont été réalisés sur le docker.
 
+### Back en docker && Front en local
+
+Avec cette configuration seul le backend tourne sous docker. Ceci est requis pour pouvoir dev sur le front en même temps car windows/mac os + turbopack ne permettent pas de surveiller les changement de fichier lorsque next.js est lancé avec docker.
+
+La première fois avec le build :
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build
 ```
-docker compose -f docker-compose.dev.yml up --build
+Les fois suivantes pour aller plus vite :
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.dev.yml up
 ```
 
-Pour lancer le front en local en même temps que le back, faire la commande suivante sur un autre terminal :
+Enfin pour lancer le front depuis sont local 
 
-```
+```bash
 npx next dev 
+```
+
+Ou
+
+```bash
+npm run dev
+```
+
+### Back && Front en docker
+
+Cette configuration fait tourner le front et le back en même temps sur docker. Surout utile pour le rendu final ou pour juste tester la connexion entre les deux.
+
+La première fois avec le build :
+
+```bash
+docker compose up --build
+```
+Les fois suivantes pour aller plus vite :
+
+```bash
+docker compose up
 ```
