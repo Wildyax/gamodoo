@@ -58,7 +58,7 @@ Les fois suivantes pour aller plus vite :
 ```bash
 docker compose up
 ```
-=======
+
 Pour lancer le front et le back en même temps il faut se mettre à la racine du projet et :
 
 La première fois il faut build les container
