@@ -15,7 +15,6 @@ git submodule update --init --recursive
 
 ## Docker
 
-<<<<<<< HEAD
 Plusieurs changements ont été réalisés sur le docker.
 
 ### Back en docker && Front en local
@@ -74,4 +73,3 @@ docker compose up
 
 - Url du front docker : http://localhost:3000/
 - Url du back docker : http://localhost:8080/
->>>>>>> main
