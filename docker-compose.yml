@@ -2,7 +2,11 @@ services:
   php:
     build:
       context: ./back
+<<<<<<< HEAD
     container_name: gamodoo_back
+=======
+    container_name: gamodoo_php
+>>>>>>> main
     volumes:
       - ./back:/var/www/html
     working_dir: /var/www/html
@@ -28,7 +32,11 @@ services:
   frontend:
     build:
       context: ./front
+<<<<<<< HEAD
     container_name: gamodoo_front
+=======
+    container_name: gamodoo_nextjs
+>>>>>>> main
     ports:
       - "3000:3000"
     volumes:
